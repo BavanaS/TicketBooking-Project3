@@ -49,6 +49,9 @@ public class StepFile {
     public void openTheBookMyShowWebsite(String arg0)
     {
         driver.get(arg0);
+        String title=driver.getTitle();
+        String expectedTitle="Movie Tickets, Plays, Sports, Events & Cinemas nearby - BookMyShow";
+        Assert.assertEquals(expectedTitle,title);
     }
 
     @When("Search for the city {string}")
