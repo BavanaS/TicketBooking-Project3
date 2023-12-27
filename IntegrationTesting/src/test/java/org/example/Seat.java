@@ -15,7 +15,6 @@ public class Seat
         driver.findElement(By.xpath("//li[@id='pop_1']")).click();
         driver.findElement(By.xpath("//div[@id='proceed-Qty']")).click();
     }
-
     public void displaySeats(WebDriver driver)
     {
         List<WebElement> rows=driver.findElements(By.cssSelector("tbody > tr"));
@@ -30,20 +29,17 @@ public class Seat
 
                 for(int j=1;j<seats.size()-1;j++)
                 {
-                    try {
-                        if (seats.get(j-1).getAttribute("data-seat-type").equals("1") && seats.get(j).getAttribute("data-seat-type").equals("1") && seats.get(j+1).getAttribute("data-seat-type").equals("1"))
-                        {
-                            String seatNo=seats.get(j).findElement(By.cssSelector("a")).getText();
-                            System.out.println(seat + seatNo);
-                        }
+                    if (seats.get(j-1).getAttribute("data-seat-type").equals("1") && seats.get(j).getAttribute("data-seat-type").equals("1") && seats.get(j+1).getAttribute("data-seat-type").equals("1"))
+                    {
+                        String seatNo=seats.get(j).findElement(By.cssSelector("a")).getText();
+                        System.out.println(seat + seatNo);
                     }
-                    catch (Exception e)
+                    else
                     {
                         System.out.println("");
                     }
                 }
             }
-
         }
     }
 }
