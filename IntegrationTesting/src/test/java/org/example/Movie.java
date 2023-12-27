@@ -20,11 +20,8 @@ public class Movie
         List<WebElement> suggestion=driver.findElements(By.xpath("//div[@class='bwc__sc-3t17w7-58 fjWgDR']"));
         for(WebElement i: suggestion)
         {
-            if(i.getText().equals(movie))
-            {
                 Assert.assertEquals(i.getText(),movie);
-                break;
-            }
+
         }
         searchBar.clear();
     }
@@ -34,12 +31,10 @@ public class Movie
         List<WebElement> movieSelect=driver.findElements(By.xpath("//span[@class='bwc__sc-3t17w7-45 bjOabr']"));
         for(WebElement i: movieSelect)
         {
-            if(i.getText().equals(movie))
-            {
-                Assert.assertEquals(i.getText(),movie);
+            Assert.assertEquals(i.getText(),movie);
                 i.click();
-                break;
-            }
+               break;
+
         }
     }
 }
